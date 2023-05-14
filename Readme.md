@@ -6,7 +6,7 @@ Personal project to understand and put in practice docker concepts and workflow 
 Postgres is used as database to store records extracted from a dynamic webpage using scraping concepts and tools. Prefect works orchestrating the pipeline, everything connected through docker containers.
 
 Pipeline Architecture:
-![kBdu33.png](https://i2.lensdump.com/i/kBdu33.png)
+![kBB2fF.png](https://i1.lensdump.com/i/kBB2fF.png)
 
 ## Idea
 The records provided by a [webpage](https://www.bancoprovincia.com.ar/cuentadni/contenidos/cdniBeneficios/), it contains shops in Buenos Aires province they offer a discount to the users of certain Bank. each record has its own info and a location button. Problem is, not every record has the button avaible. I made a script to obtains the missing data(if shop info is complete) and stores the fullfilled table to a database.
