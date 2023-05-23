@@ -3,13 +3,13 @@
 ## About
 Personal project to understand and put in practice docker concepts and workflow orchestation with various tools.
 
-Postgres is used as database to store records extracted from a dynamic webpage using scraping concepts and tools. Prefect works for orchestate the pipeline, everything connected through docker containers.
+Postgres is used as database to store records extracted from a dynamic webpage using scraping concepts and tools. Prefect works orchestrating the pipeline, everything connected through docker containers.
 
 Pipeline Architecture:
-IMAGEN DAG
+![kBB2fF.png](https://i1.lensdump.com/i/kBB2fF.png)
 
 ## Idea
-The records provided by WEBPAGE, contains shops in Buenos Aires province that they offer a discount to the users of certain Bank. each record has his own info and a location button. Problem is, not every record has the button avaible, so i made a script to obtain the missing data(if shop info is complete) to fullfil and stores everything to a database.
+The records provided by a [webpage](https://www.bancoprovincia.com.ar/cuentadni/contenidos/cdniBeneficios/), it contains shops in Buenos Aires province they offer a discount to the users of certain Bank. each record has its own info and a location button. Problem is, not every record has the button avaible. I made a script to obtains the missing data(if shop info is complete) and stores the fullfilled table to a database.
 
 ## Prerequisites
 - [Docker](https://docs.docker.com/get-docker/)
