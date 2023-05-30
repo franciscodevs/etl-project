@@ -108,7 +108,7 @@ services:
 volumes:
   # For prefect data, flows, deploys, etc.
   prefect:
-  # For project and prefect data.
+  # For project data.
   db:
 
 # NETWORKS

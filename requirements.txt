@@ -1,4 +1,4 @@
-pandas
-psycopg2-binary
-tqdm
-selenium
+pandas==2.0.1
+psycopg2-binary==2.9.6
+tqdm==4.65.0
+selenium==4.9.0
