@@ -34,5 +34,10 @@ Chek if every container is running
 ```
 docker-ps
 ```
-Imagen explicando porque cli no inicia con compose up y porque hay q correrlo por separado
 
+![6gOXQz.png](https://i.lensdump.com/i/6gOXQz.png)
+
+- ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) `Command line Container`
+- ![#ed0124](https://via.placeholder.com/15/ed0124/000000?text=+) `Environment Container (Prefect, PostgreSQL, ChromeDriver)`
+
+Command line interacts with prefect to run flows, deployments, etc. 
