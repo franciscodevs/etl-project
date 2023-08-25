@@ -5,6 +5,7 @@
 __pycache__/
 flow.py
 pruebas.py
+.idea/
 
 #prefect files
 .prefectinogre
