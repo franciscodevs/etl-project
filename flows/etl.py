@@ -291,7 +291,7 @@ def create_db(df):
     l_end = time()
     get_run_logger().info(f'Data ingesting on database lasts {l_end - l_start:.2f} seconds')
             
-
+ 
 @flow()
 def flow_run():
     """
