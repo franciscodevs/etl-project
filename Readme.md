@@ -30,7 +30,7 @@ Run CLI container to interact with the pipeline
 ```
 docker-compose run --rm cli
 ```
-Chek if every container is running
+Chek in another terminal if every container is running
 ```
 docker-ps
 ```
@@ -41,3 +41,11 @@ docker-ps
 - ![#ed0124](https://via.placeholder.com/15/ed0124/000000?text=+) `Environment Container (Prefect, PostgreSQL, ChromeDriver)`
 
 Command line interacts with prefect to run flows, deployments, etc. 
+
+## Pipeline Overview
+This pipeline consists of the following steps:
+
+1. **Initialization**: Initialize a Chrome WebDriver instance for web scraping.
+2. **Data Extraction**: Load web pages, extract table data, and concatenate the results.
+3. **Geocoding**: Geocode adresses in the dataset using the GoogleV3 geocoder.
+4. **Data Ingestion**: Create a PostgreSQL table and ingest the geocoded data.

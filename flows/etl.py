@@ -2,18 +2,15 @@ import re
 import os
 import random
 import psycopg2
-
-from geopy.geocoders import GoogleV3
-import requests.exceptions
-
 import time
 import requests
 import numpy as np
 import pandas as pd
 from time import time
 from tqdm import tqdm
+import requests.exceptions
 from selenium import webdriver
-from geopy.geocoders import Nominatim
+from geopy.geocoders import GoogleV3
 from geopy.exc import GeocoderTimedOut
 from sqlalchemy import create_engine
 from selenium.webdriver.common.by import By
@@ -131,9 +128,7 @@ def extract_table(driver, data, headers) -> pd.DataFrame:
         pd.DataFrame: Extracted table data as a DAtaFrame
     """
     # # Navigate web page
-    # driver.get("https://www.bancoprovincia.com.ar/cuentadni/buscadores/carniceriasymas")
     # # Wait till table loads
-    # # WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.CLASS_NAME, 'row-border')))
     WebDriverWait(driver,timeout=10).until(EC.visibility_of_element_located((By.XPATH, '//table[@id]/tbody/tr[1]'))).text
     # Number of records on table
     text = driver.find_element(By.XPATH, '//*[@id="table_id_info"]')
@@ -144,7 +139,6 @@ def extract_table(driver, data, headers) -> pd.DataFrame:
     bar_format="{l_bar}{bar} [time left: {remaining}, time spent: {elapsed}]") as pbar:
     #Loop
         while True:
-
             for idx in range(1,5):
             # Looping through every column in table (way faster than row looping) and extracting data to a dict
                 raw_data = driver.execute_script(
@@ -312,6 +306,9 @@ def flow_run():
     df = geocode_dataframe(result)
     #Load
     create_db(df)
+
+    #Quit WebDriver session
+    driver.quit()
 
 if __name__ == '__main__':
     flow_run()
